@@ -21,12 +21,21 @@ namespace Quotes.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Get all subscribes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<SubscribeModel> Get()
         {
             return _db.ToArray();
         }
         
+        /// <summary>
+        /// Create new subscribe
+        /// </summary>
+        /// <param name="subscribe"></param>
+        /// <returns></returns>
         [HttpPost]
         public virtual async Task<IActionResult> Create([FromBody] SubscribeModel subscribe)
         {

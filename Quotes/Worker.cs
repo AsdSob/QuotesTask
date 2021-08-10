@@ -22,6 +22,12 @@ namespace Quotes
             SendTime = DateTime.Now;
         }
 
+        /// <summary>
+        /// Every 5 minute checking Expired quotes
+        /// Daily mail
+        /// </summary>
+        /// <param name="stoppingToken"></param>
+        /// <returns></returns>
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
@@ -37,6 +43,9 @@ namespace Quotes
             }
         }
 
+        /// <summary>
+        /// Removing quotes created more then 24 hours
+        /// </summary>
         private void DeleteExpiredQuotes()
         {
             var quotes = _quotes;
@@ -46,6 +55,9 @@ namespace Quotes
             _quotes = quotes;
         }
 
+        /// <summary>
+        /// Checking subcribtion options
+        /// </summary>
         private void SendDailyQuotes()
         {
             foreach (var quote in _quotes)
@@ -67,11 +79,18 @@ namespace Quotes
             SendTime.AddDays(1);
         }
 
+        /// <summary>
+        /// SMS sending method
+        /// </summary>
         private void SendSMS()
         {
-
+            // SMS sending API service
         }
 
+
+        /// <summary>
+        /// Email sending method
+        /// </summary>
         private void SendEmail()
         {
 

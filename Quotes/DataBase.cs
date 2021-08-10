@@ -11,25 +11,18 @@ namespace Quotes
         public DataBase()
         {
             Quotes = new List<QuoteModel>();
+
+            CreateTestQuotes();
+
             Subscribes = new List<SubscribeModel>();
+            CreateTestSubscribes();
+        }
 
-            Subscribes.Add(new SubscribeModel()
-            {
-                Email = "Sam@gmail.com",
-                UserName = "Sam",
-            });
-
-            Subscribes.Add(new SubscribeModel()
-            {
-                Phone = "+998998887766",
-                UserName = "Tolstoy",
-            });            Subscribes.Add(new SubscribeModel()
-            {
-                Email = "Hemingway@gmail.com",
-                Phone = "+9981763652",
-                UserName = "Hemingway",
-            });
-
+        /// <summary>
+        /// Quotes records for testing
+        /// </summary>
+        private void CreateTestQuotes()
+        {
             Quotes.Add(new QuoteModel()
             {
                 Id = 1,
@@ -73,6 +66,29 @@ namespace Quotes
                 Quote = "Politics is war without bloodshed while war is politics with bloodshed.",
                 Author = "Mao Zedong",
                 CreatedDate = DateTime.Now,
+            });
+        }
+
+        /// <summary>
+        /// Subscribe records for testing
+        /// </summary>
+        private void CreateTestSubscribes()
+        {
+            Subscribes.Add(new SubscribeModel()
+            {
+                Email = "Sam@gmail.com",
+                UserName = "Sam",
+            });
+
+            Subscribes.Add(new SubscribeModel()
+            {
+                Phone = "+998998887766",
+                UserName = "Tolstoy",
+            }); Subscribes.Add(new SubscribeModel()
+            {
+                Email = "Hemingway@gmail.com",
+                Phone = "+9981763652",
+                UserName = "Hemingway",
             });
         }
     }
