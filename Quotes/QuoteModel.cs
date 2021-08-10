@@ -11,5 +11,8 @@ namespace Quotes
         public string Quote { get; set; }
 
         public int Category { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
     }
 }

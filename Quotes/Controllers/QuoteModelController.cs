@@ -53,8 +53,10 @@ namespace Quotes.Controllers
         [HttpPost]
         public virtual async Task<IActionResult> Create([FromBody] QuoteModel quote)
         {
-            _db.Add(quote);
-
+            var newQuote = quote;
+            newQuote.CreatedDate = DateTime.Now;
+            
+            _db.Add(newQuote);
             return Ok();
         }
 

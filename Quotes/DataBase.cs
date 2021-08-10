@@ -18,6 +18,7 @@ namespace Quotes
                 Category = 1,
                 Quote = "Everyone thinks of changing the world, but no one thinks of changing himself.",
                 Author = "Leo Tolstoy",
+                CreatedDate = DateTime.Now,
             });
 
             Add(new QuoteModel()
@@ -26,6 +27,7 @@ namespace Quotes
                 Category = 1,
                 Quote = "The way to make people trust-worthy is to trust them.",
                 Author = "Ernest Hemingway",
+                CreatedDate = DateTime.Now,
             });
 
             Add(new QuoteModel()
@@ -34,14 +36,16 @@ namespace Quotes
                 Category = 2,
                 Quote = "If you gaze long enough into an abyss, the abyss will gaze back into you.",
                 Author = "Friedrich Nietzsche",
-            });            
-            
+                CreatedDate = DateTime.Now,
+            });
+
             Add(new QuoteModel()
             {
                 Id = 4,
                 Category = 2,
                 Quote = "We are not rich by what we possess but by what we can do without.",
                 Author = "Immanuel Kant",
+                CreatedDate = DateTime.Now,
             });
 
             Add(new QuoteModel()
@@ -50,6 +54,7 @@ namespace Quotes
                 Category = 3,
                 Quote = "Politics is war without bloodshed while war is politics with bloodshed.",
                 Author = "Mao Zedong",
+                CreatedDate = DateTime.Now,
             });
         }
     }
