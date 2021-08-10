@@ -9,15 +9,15 @@ namespace Quotes.Controllers
 {
     [ApiController]
     [Route("quotes")]
-    public class QuoteModelController : ControllerBase
+    public class QuotesController : ControllerBase
     {
 
-        private readonly ILogger<QuoteModelController> _logger;
-        private DataBase _db;
+        private readonly ILogger<QuotesController> _logger;
+        private List<QuoteModel> _db;
 
-        public QuoteModelController(ILogger<QuoteModelController> logger, DataBase db)
+        public QuotesController(ILogger<QuotesController> logger, DataBase db)
         {
-            this._db = db;
+            this._db = db.Quotes;
             _logger = logger;
         }
 

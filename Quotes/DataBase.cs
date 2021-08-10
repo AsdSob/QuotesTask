@@ -1,18 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Quotes
 {
-    public class DataBase : List<QuoteModel>
+    public class DataBase
     {
-        
+        public List<QuoteModel> Quotes { get; set; }
+        public List<SubscribeModel> Subscribes { get; set; }
+
         public DataBase()
         {
-            new List<QuoteModel>();
+            Quotes = new List<QuoteModel>();
+            Subscribes = new List<SubscribeModel>();
 
-            Add(new QuoteModel()
+            Subscribes.Add(new SubscribeModel()
+            {
+                Email = "Sam@gmail.com",
+                UserName = "Sam",
+            });
+
+            Subscribes.Add(new SubscribeModel()
+            {
+                Phone = "+998998887766",
+                UserName = "Tolstoy",
+            });            Subscribes.Add(new SubscribeModel()
+            {
+                Email = "Hemingway@gmail.com",
+                Phone = "+9981763652",
+                UserName = "Hemingway",
+            });
+
+            Quotes.Add(new QuoteModel()
             {
                 Id = 1,
                 Category = 1,
@@ -21,7 +39,7 @@ namespace Quotes
                 CreatedDate = DateTime.Now,
             });
 
-            Add(new QuoteModel()
+            Quotes.Add(new QuoteModel()
             {
                 Id = 2,
                 Category = 1,
@@ -30,7 +48,7 @@ namespace Quotes
                 CreatedDate = DateTime.Now,
             });
 
-            Add(new QuoteModel()
+            Quotes.Add(new QuoteModel()
             {
                 Id = 3,
                 Category = 2,
@@ -39,7 +57,7 @@ namespace Quotes
                 CreatedDate = DateTime.Now,
             });
 
-            Add(new QuoteModel()
+            Quotes.Add(new QuoteModel()
             {
                 Id = 4,
                 Category = 2,
@@ -48,7 +66,7 @@ namespace Quotes
                 CreatedDate = DateTime.Now,
             });
 
-            Add(new QuoteModel()
+            Quotes.Add(new QuoteModel()
             {
                 Id = 5,
                 Category = 3,

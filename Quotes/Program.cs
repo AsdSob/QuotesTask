@@ -17,9 +17,9 @@ namespace Quotes
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); })
                 .ConfigureServices(services => services.AddHostedService<Worker>()).ConfigureLogging(logging =>
-            {
-                logging.ClearProviders();
-                logging.AddConsole();
-            });
+                {
+                    logging.ClearProviders();
+                    logging.AddConsole();
+                });
     }
 }
