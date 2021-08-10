@@ -14,14 +14,12 @@ namespace Quotes.Controllers
 
         private readonly ILogger<QuotesController> _logger;
         private List<QuoteModel> _db;
-        private Random _random;
+        private static readonly Random random = new Random();
 
         public QuotesController(ILogger<QuotesController> logger, DataBase db)
         {
             this._db = db.Quotes;
             _logger = logger;
-
-            _random = new Random();
         }
 
         /// <summary>
@@ -41,7 +39,7 @@ namespace Quotes.Controllers
         [HttpGet("random")]
         public QuoteModel GetRandom()
         {
-            int index = _random.Next(_db.Count);
+            int index = random.Next(_db.Count);
             
             return _db[index];
         }
